@@ -1,5 +1,6 @@
-import React from 'react-native'
-const {View, InteractionManager} = React;
+import React from 'react'
+import ReactNative from 'react-native'
+const {View, InteractionManager} = ReactNative;
 import Tabs from 'react-native-tabs';
 
 import Actions from './Actions';
@@ -42,4 +43,3 @@ export default class TabBar extends React.Component {
         );
     }
 }
-

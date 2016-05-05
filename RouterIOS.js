@@ -7,13 +7,14 @@
  *
  */
 
-import React from 'react-native';
+import React from 'react';
+import ReactNative from 'react-native';
 import BaseRouter from './BaseRouter';
 import Route from './Route';
 import * as Components from './Common';
 import ExNavigator from '@exponent/react-native-navigator';
 import Animations from './Animations';
-const {TouchableOpacity, NavigatorIOS, StyleSheet, View, Text} = React;
+const { TouchableOpacity, NavigatorIOS, StyleSheet, View, Text } = ReactNative;
 import Router from './Router';
 
 class RouteIOS extends React.Component {
@@ -121,4 +122,3 @@ var styles = StyleSheet.create({
     },
 
 });
-
