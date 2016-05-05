@@ -347,22 +347,22 @@ export default class ExRouter extends React.Component {
         debug("RENDER ROUTER:"+router.name);
         return (
             <ActionSheet ref="actionsheet">
-                <View style={[styles.transparent, routerViewStyle]}>
-                    {header}
-                    <ExNavigator ref="nav" initialRouteStack={router.stack.map(route => {
-                            debug("REBUILDING STACK!");
-                            const oldProps = router.routes[route].props
-                            router.routes[route].props = {...oldProps, ...parentProps(this.props), ...this.state}
-                            return new ExRouteAdapter(router.routes[route])
-                        })}
-                        style={styles.transparent}
-                        sceneStyle={{ paddingTop: 0, backgroundColor:'transparent' }}
-                        {...this.props}
-                        renderNavigationBar={props=><ExNavigationBar {...this.props} {...props} {...this.state} router={router}/>}
-                    />
-                    {footer}
-                    {this.state.modal}
-                </View>
+              <View style={[styles.transparent, routerViewStyle]}>
+                {header}
+                <ExNavigator ref="nav" initialRouteStack={router.stack.map(route => {
+                  debug("REBUILDING STACK!");
+                  const oldProps = router.routes[route].props
+                  router.routes[route].props = {...oldProps, ...parentProps(this.props), ...this.state}
+                  return new ExRouteAdapter(router.routes[route])
+                })}
+                  style={styles.transparent}
+                  sceneStyle={{ paddingTop: 0, backgroundColor:'transparent' }}
+                  {...this.props}
+                  renderNavigationBar={props=><ExNavigationBar {...this.props} {...props} {...this.state} router={router}/>}
+                />
+                {footer}
+                {this.state.modal}
+              </View>
             </ActionSheet>
         );
     }
